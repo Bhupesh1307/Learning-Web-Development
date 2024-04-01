@@ -1,0 +1,65 @@
+body {
+  background-color: black;
+}
+
+.text {
+  color: blue;
+  text-decoration: underline;
+}
+
+#exp {
+  color: brown;
+}
+
+.text {
+  text-align: center;
+  #hw {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  #exp {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: violet;
+}
+
+.heading {
+  color: white;
+}
+#normal {
+  font-weight: normal;
+}
+
+#bold {
+  font-weight: bold;
+}
+
+#bolder {
+  font-weight: bolder;
+}
+
+#lighter {
+  font-weight: lighter;
+}
+
+.fontsize {
+  text-transform: capitalize;
+  color: white;
+    #one {
+      text-transform: uppercase;
+    font-size: 30px;
+    line-height: 45px;
+  }
+  #two {
+    font-size: 25px;
+    line-height: 145px;
+  }
+  #three {
+    font-size: 20px;
+    text-transform: lowercase;
+    line-height: 180px;
+  }
+}

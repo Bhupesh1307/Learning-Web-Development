@@ -1,0 +1,49 @@
+#navbar {
+  background-color: black;
+  height: 60px;
+  width: 100%;
+}
+
+#amazon {
+  text-decoration: none;
+  color: #f08804;
+  size: 25px;
+}
+
+#Account {
+  color: white;
+  text-decoration: none;
+}
+
+#mycart {
+  color: white;
+  text-decoration: none;
+}
+
+#contact-us {
+  color: white;
+  text-decoration: none;
+}
+
+#searchbox {
+  color: white;
+  border-radius: 1px;
+  border-color: black;
+}
+
+#search {
+  background-color: #f08804;
+  color: white;
+}
+
+a {
+  margin-right: 150px;
+}
+
+#circle {
+  margin-top: 100px;
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  border-radius: 50%;
+}

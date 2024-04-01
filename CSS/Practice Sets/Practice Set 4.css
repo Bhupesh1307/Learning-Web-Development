@@ -1,0 +1,78 @@
+.navbar {
+    border-color: black;
+    background-color: black;
+    height: 60px;
+    width: 100%;
+  }
+  
+  #amazon {
+    text-decoration: none;
+    color: #f08804;
+    size: 25px;
+  }
+  
+  #Account {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #mycart {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #contact-us {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #searchbox {
+    color: white;
+    border-radius: 1px;
+    border-color: black;
+  }
+  
+  #search {
+    background-color: #f08804;
+    color: white;
+  }
+  
+  a {
+    margin-right: 150px;
+  }
+
+    .content{
+        height: 725px;
+    }
+
+    #box1{
+        background-color: rgba(255,0,0,0.5);
+        height: 100px;
+        width: 100px;
+        margin: 15px;
+        border-color: black;
+    }
+
+    #box2{
+        background-color: rgba(255,255,0,0.5);
+        height: 100px;
+        width: 100px;
+        margin: 15px;
+        border-color: black;
+    }
+
+    #box3{
+        background-color: rgba(0, 255, 0, 0.5);
+        height: 100px;
+        width: 100px;
+        margin: 15px;
+        border-color: black;
+    }
+
+    footer{
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 35px;
+    }

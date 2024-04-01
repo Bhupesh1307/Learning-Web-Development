@@ -1,0 +1,54 @@
+#box1{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    font-size: 10px;
+    width: 8rem;
+}
+
+#box2{
+    height: 50vh;
+    background-color:yellow;
+    width: 50%;
+    margin: 10%;
+    font-size: 2em;
+    width: 5em;
+}
+
+.pos{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+#box3{
+    position: static;
+}
+
+#box4{
+    position: relative;
+    top: 50px;
+    right: 55px;
+    z-index: -2;
+}
+
+#box5{
+    position: absolute;
+    top: 20px;
+    background-image: url("lukas-w-e3mu-MTj7Xk-unsplash.jpg");
+    background-size: cover;
+}
+
+#box6{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+#box7{
+    position: sticky;
+    top: 0px;
+}
