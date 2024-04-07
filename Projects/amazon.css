@@ -10,6 +10,7 @@
   color: white;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 /* Box 1 */
@@ -58,6 +59,11 @@
     width: 47%;
     margin-left: 2%;
 }
+
+.nav-search:hover{
+  border: 2px solid orange;
+  border-radius: 6px;
+}
 .search-select{
     background-color: #f3f3f3;
     height: 100%;
@@ -89,4 +95,24 @@
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     background-color: #febd68;
+}
+
+/* Box 4 */
+.nav-first{
+  font-size: 0.75rem;
+}
+
+.nav-second{
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Box 5 */
+.nav-cart i{
+  font-size: 25px
+}
+
+.nav-cart{
+  font-size: 0.85rem;
+  font-weight: 700;
 }
