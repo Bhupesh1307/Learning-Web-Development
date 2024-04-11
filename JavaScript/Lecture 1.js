@@ -15,4 +15,4 @@ y = undefined;
 console.log(y);
 
 isFollow = false;
-console.log(isFollow)
+console.log(isFollow);
