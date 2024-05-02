@@ -110,3 +110,33 @@ console.log("cond1 ! cond2 are", !(cond1, cond2));
 console.log("cond1 ! cond2 are", !(A == B));
 console.log("cond1 ! cond2 are", !(A === "str"));
 console.log("cond1 ! cond2 are", !(A === B));
+
+// Conditional Statements
+
+// If and Else Statement
+// Age limit example
+let age = 25;
+if (age >= 18) {
+  console.log("You can Vote!")
+} else {
+  console.log("You can not Vote!")
+}
+
+// Color theme example
+let mode = "Dark";
+let color;
+if (mode === "Dark") {
+  color = "Black"
+} else {
+  color = "White"
+}
+
+console.log("Color:", color);
+
+// Even or Odd Number Example
+let num = 2;
+if (num % 2 === 0) {
+  console.log(num, "is an even number");
+} else {
+  console.log(num, "is an odd number");
+}
