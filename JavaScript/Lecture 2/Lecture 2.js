@@ -140,3 +140,20 @@ if (num % 2 === 0) {
 } else {
   console.log(num, "is an odd number");
 }
+
+// If, If-Else and Else Statements
+let Age = 5;
+if (Age < 12) {
+  console.log("You are a kid");
+}
+
+else if (Age >= 12 && Age < 18) {
+  console.log("You are a teen");
+}
+
+else if (Age >= 18 && Age < 30) console.log("You are an Adult"); // We can also write this statements like this
+                                                                 // But this is not the profesional way to write if else statements!
+
+else {
+  console.log("You are a Senior Citizen");
+}
