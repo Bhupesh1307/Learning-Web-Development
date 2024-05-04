@@ -157,3 +157,22 @@ else if (Age >= 18 && Age < 30) console.log("You are an Adult"); // We can also 
 else {
   console.log("You are a Senior Citizen");
 }
+
+// Ternary Operators
+let AGE = 19;
+let result = AGE >= 18? "Adult" : "Not Adult";  // It is just like a combination of if and else in just one line
+console.log(result)                             // It is the only Javascript Operator which can have three operands
+
+// Switch Statements || We can also use Switch to check multiple conditions
+const expr = "papayas";
+switch(expr) {
+  case "Oranges":
+    console.log("Oranges are sour");
+    break;
+  case "Mangoes":
+  case "papayas":
+    console.log("Mangoes and Papayas are Sweet");
+    break;
+  default:
+    console.log(`Sorry, we are out of ${expr}`);
+}
