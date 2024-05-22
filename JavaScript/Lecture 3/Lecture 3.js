@@ -60,7 +60,8 @@ console.log("do while loop ended");
 
 // For-Of Loop  || It is used to get all charectors from a string
 let str = "Bhupesh";
-for (let i of str) {      // i for iterator
+for (let i of str) {
+  // i for iterator
   console.log(i);
 }
 
@@ -79,9 +80,62 @@ let Student = {
   name: "Rahul Sarkar",
   class: 12,
   percentage: 87,
-  isPass: true
+  isPass: true,
 };
 
-for (let i in Student){
-  console.log(i,":", Student[i]);
+for (let i in Student) {
+  console.log(i, ":", Student[i]);
 }
+
+// Strings in JavaScript
+let str1 = "Hello World";
+let str2 = "Bhupesh";
+
+// String Length
+console.log(str1, "has", str1.length, "letters");
+console.log(str2, "has", str2.length, "letters");
+
+// String Indices
+console.log("Bhupesh's 4th charector is", str2[3]);
+console.log(
+  "Hello World has",
+  str1[0],
+  str1[1],
+  str1[2],
+  str1[3],
+  str1[4],
+  str1[5],
+  str1[6],
+  str1[7],
+  str1[8],
+  str1[9],
+  str1[10],
+  "letters"
+);
+
+// Template Literals  || Template Literals are special type of strings in JavaScript
+let specialString = `This is a Template Literal`;
+console.log(specialString);
+console.log(typeof specialString);
+
+// Use of Template Literals in JavaScript
+let obj = {
+  item: "pen",
+  price: 10,
+};
+
+console.log("The cost of", obj.item, "is", obj.price, "rupees!");
+console.log(`The cost of ${obj.item} is ${obj.price} rupees`); // The Template Literals are used to do this type of tasks so easily!
+// We can also do it like this:
+let info = `The cost of ${obj.item} is ${obj.price} rupees`;
+console.log(info);
+/* IMP: This thing "${expression}" is called a placeholder. In the Template Literals we embade these placeholders.
+   This process of embading a placeholder in a Template Literal is called "String Interpolation".
+*/
+// We can also do this:
+console.log(`${1 + 2 + 3}`);
+
+
+// Escape Charecters in JavaScript
+
+console.log("Bhupesh \n \tChaubey"); // The Escapte Charecters take 1 count in string.
