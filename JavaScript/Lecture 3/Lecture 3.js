@@ -137,5 +137,51 @@ console.log(`${1 + 2 + 3}`);
 
 
 // Escape Charecters in JavaScript
-
+// \n   -    Adds a new line
+//  \t  -    Adds a tab in the line
 console.log("Bhupesh \n \tChaubey"); // The Escapte Charecters take 1 count in string.
+
+// String Methods
+// str.toUpperCase()
+// str.toLowerCase()
+// str.trim()
+// str.slice(start, end?)
+// str1.concat(str2)
+// str.replace(searchVal, newVal)
+// str.charAt(idx)
+
+// str.toUpperCase()
+let STR = "abc";
+STR = STR.toUpperCase();
+console.log(STR);
+
+// str.toLowerCase()
+let yt = "Apana College";
+console.log(yt.toLowerCase()); // () after a string method is required.
+
+// str.trim()
+let txt = "            Apna College          ";
+txt = txt.trim();
+console.log(txt);
+
+// str.slice()
+let slc = "abc123";
+console.log(slc.slice(0, 5)); // The ending index is not included!
+console.log(slc.slice(3, 6));
+console.log(slc.slice());     // If we don't give any index to it. It gives us whole string.
+
+// str1.concat(str2)
+let strA = "String 1";
+let strB = "String 2";
+let comboStr = strA.concat(strB);
+console.log(comboStr);
+console.log(strA + strB);     // We can also add two string like this
+
+// str.replace()
+let fruit = "Mango is a fruit";
+fruit = fruit.replace("Mango", "Orange");
+console.log(fruit);
+
+// ste.charAt()
+let char = "IloveJS";
+console.log("4th Charecter is", char.charAt(3));
