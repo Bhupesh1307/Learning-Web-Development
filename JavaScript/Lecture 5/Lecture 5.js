@@ -65,3 +65,16 @@ const print = (x) => {
 }
 
 print("Hello World");
+
+// forEach Loop in JavaScript
+let arr = [1, 2, 3, 4, 5];
+arr.forEach(function printVal(val) {
+    console.log(val);
+})
+
+let arr1 = ["a", "b", "c"];
+arr1.forEach((val, idx, arr1) => {
+    console.log(idx + 1, val.toUpperCase(), arr1);
+})
+// forEach is a Higher Order Fuction/Method
+// Higher Order Function or Methods are functions or Methods which can take other function as a parameter
