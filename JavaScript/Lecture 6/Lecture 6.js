@@ -37,3 +37,27 @@ console.dir(btn);
 // Selecting class
 let paragraph = document.querySelectorAll(".exp")
 console.dir(paragraph);
+
+// Properties
+// tagName
+console.log(head1.tagName);     // returns Tag Name
+console.log(btn.tagName);
+
+let firstEl = document.querySelector("#head1");
+console.log(firstEl.tagName);
+
+let bodyChild = document.querySelector('body');
+console.log(bodyChild.children);
+console.log(bodyChild.firstChild);
+console.log(bodyChild.lastChild);
+
+let fruits = document.querySelector(".fruits");
+console.dir(fruits);
+console.log(fruits.innerText);
+console.log(fruits.innerHTML);
+fruits = fruits.innerText = "abc";
+console.log(fruits);
+fruits = fruits.innerHTML = "<h2>Fruits</h2>";
+
+let heading1 = document.getElementById("heading 1");
+console.log(heading1.textContent);
