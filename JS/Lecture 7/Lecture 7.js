@@ -41,3 +41,10 @@ div.before(head1);
 div.after(head2);
 
 btn.remove();
+
+list = document.querySelector("ul");
+listItem = document.createElement("li");
+listText = document.createTextNode("Water");
+listItem.appendChild(listText);
+list.appendChild(listItem);
+list.removeChild(listItem);
