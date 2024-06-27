@@ -1,0 +1,10 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: cornflowerblue;
+    transition: 0.5s;
+}
+
+.box-change {
+    background-color: crimson;
+}
