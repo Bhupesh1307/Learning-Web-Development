@@ -1,5 +1,5 @@
 async function fetchSongs() {
-  let a = await fetch("http://127.0.0.1:5500/Projects/Spotify%20Clone%20Project/src/songs");
+  let a = await fetch("http://127.0.0.1:5500/Projects/Spotify%20Clone/src/songs");
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
