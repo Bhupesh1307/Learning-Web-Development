@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/utility.css" />
+  </head>
+  <body>
+    <div class="navbar flex">
+      <div class="nav-left flex">
+        <div class="logo flex justify-center align-center">
+          <img
+            class="invert"
+            src="src/img/logo.svg"
+            alt="spotify logo"
+            width="32px"
+          />
+        </div>
+        <div class="home-container flex">
+          <div class="home-btn flex justify-center align-center">
+            <img class="invert" src="src/img/home.svg" alt="home" />
+          </div>
+          <div class="search flex align-center">
+            <img
+              class="invert"
+              id="search-icn"
+              src="src/img/search.svg"
+              alt="search"
+              width="25px"
+            />
+            <input
+              id="search-box"
+              type="search"
+              placeholder="What do you want to play?"
+            />
+            <img
+              class="invert"
+              id="category-icn"
+              src="src/img/category.svg"
+              alt="category"
+              width="25px"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="nav-right flex align-center">
+        <div class="links-left">
+          <ul class="flex">
+            <li>
+              <a href="#">Premium</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+            <li>
+              <a href="#">Download</a>
+            </li>
+          </ul>
+        </div>
+        <div class="links-right flex align-center">
+          <div class="install flex align-center">
+            <img
+              class="invert"
+              src="src/img/install.svg"
+              alt="install app"
+              width="16px"
+            />
+            <a href="#">Install App</a>
+          </div>
+          <div class="sign-in flex align-center">
+            <a href="#">Sign up</a>
+            <span class="login flex justify-center align-center">Log in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container flex">
+      <div class="left">
+        <div class="library">
+          <div class="header">
+            <h2>Your Library</h2>
+            <div class="addPlaylist flex justify-center align-center">
+              <img
+                class="invert"
+                src="src/img/add playlist.svg"
+                alt="add playlist"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="playlists">
+          <a href="#">Trending songs</a>
+          <div class="cardsContainer flex">
+            <div class="card">
+              <img src="src/img/Thodi si Daru.jpeg" alt="song" />
+              <h2>Thodi Si Daaru</h2>
+              <p>AP Dhillon, Shreya Ghoshal</p>
+              <span class="play flex justify-center align-center">
+                <img src="src/img/play.svg" alt="play song">
+              </span>
+            </div>
+            <div class="card">
+              <img src="src/img/Pardesiya.jpg" alt="song" />
+              <h2>Pardesiya - From "Param Sundari"</h2>
+              <p>Sachin-Jigar, Sonu Nigam, Krishnakali Saha, Amitab...</p>
+              <span class="play flex justify-center align-center">
+                <img src="src/img/play.svg" alt="play song">
+              </span>
+            </div>
+            <div class="card">
+              <img src="src/img/Azul.jpg" alt="song" />
+              <h2>AZUL</h2>
+              <p>Guru Randhawa, Gurjit Gill, Lavish Dhiman</p>
+              <span class="play flex justify-center align-center">
+                <img src="src/img/play.svg" alt="play song">
+              </span>
+            </div>
+            <div class="card">
+              <img src="src/img/Aavan Jaavan.jpg" alt="song" />
+              <h2>Aavan Jaavan (From "WAR 2")</h2>
+              <p>Pritam, Arijit Singh, Nikhita Gandhi, Amitabh...</p>
+              <span class="play flex justify-center align-center">
+                <img src="src/img/play.svg" alt="play song">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom flex justify-center align-center">
+      <div class="playbar flex justify-center">
+        <div class="controlBtns flex justify-center align-center">
+          <button class="songBtns">
+            <img src="src/img/prevSong.svg" alt="Previous Song">
+          </button>
+          <div class="button songBtns" id="songPlay">
+            <img src="src/img/play.svg" alt="Play">
+          </div>
+          <button class="songBtns">
+            <img src="src/img/nextSong.svg" alt="Next Song">
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

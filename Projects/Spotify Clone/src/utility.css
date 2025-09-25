@@ -1,0 +1,25 @@
+.bg-black {
+    background-color: #000;
+    color: #fff;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.border {
+    border: 2px solid red;
+    margin: 3px;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
