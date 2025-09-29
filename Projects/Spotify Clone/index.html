@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify Clone</title>
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/style.css" />
     <link rel="stylesheet" href="src/utility.css" />
   </head>
@@ -134,9 +135,11 @@
         </div>
       </div>
     </div>
+    <!-- Bottom Section - Music Play Controls -->
     <div class="bottom flex justify-center align-center">
       <div class="playbar flex justify-center">
         <div class="controlBtns flex justify-center align-center">
+          <!-- Music Control Buttons -->
           <button class="songBtns">
             <img src="src/img/prevSong.svg" alt="Previous Song">
           </button>
@@ -147,6 +150,10 @@
             <img src="src/img/nextSong.svg" alt="Next Song">
           </button>
         </div>
+        <!-- SeekBar -->
+         <div class="seekbar">
+          <div class="circle"></div>
+         </div>
       </div>
     </div>
     <script src="src/script.js"></script>
