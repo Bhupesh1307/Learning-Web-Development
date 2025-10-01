@@ -343,6 +343,7 @@ a {
     min-height: 35px;
     background-color: #0e0e0e;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .container .left .library .songsList ul li:hover {
@@ -431,6 +432,7 @@ a {
     background-color: #3be477;
     border-radius: 50%;
     visibility: hidden;
+    cursor: pointer;
 }
 
 .container .right .playlists .cardsContainer .card:hover {
@@ -465,6 +467,7 @@ a {
     background-color: #000;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .bottom .playbar #songPlay {

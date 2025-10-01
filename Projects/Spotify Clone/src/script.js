@@ -19,10 +19,14 @@ async function fetchSongs() {
 
 let currentSong = new Audio()
 
+let playBtn = document.querySelector("#songPlay")
+let playIco = playBtn.querySelector("img")
+
 function musicPlay(track) {
   track = track.replaceAll("&amp;", "%26")
   currentSong.src = "src/songs/" + track;
   currentSong.play();
+  playIco.src = "src/img/pause.svg"
 }
 
 async function main() {
@@ -50,7 +54,7 @@ async function main() {
               </li>`;
   }
 
-  // Attach an even listenener to each song
+  // Attach an event listenener to each song
   Array.from(
     document.querySelector(".songsList").getElementsByTagName("li")
   ).forEach((e) => {
@@ -61,6 +65,19 @@ async function main() {
       musicPlay(song);
     });
   });
+
+
+  // Attach an event listener to play, previos and next buttons
+  playBtn.addEventListener("click", ()=> {
+    if (currentSong.paused) {
+      currentSong.play()
+      playIco.src = "src/img/pause.svg"
+    } else {
+      currentSong.pause()
+      playIco.src="src/img/play.svg"
+    }
+  })
+
 }
 
 main();
