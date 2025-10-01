@@ -17,16 +17,34 @@ async function fetchSongs() {
   return songs;
 }
 
-let currentSong = new Audio()
+let currentSong = new Audio();
 
-let playBtn = document.querySelector("#songPlay")
-let playIco = playBtn.querySelector("img")
+let playBtn = document.querySelector("#songPlay");
+let playIco = playBtn.querySelector("img");
+
+function secondsToMinutesSeconds(seconds) {
+  if (isNaN(seconds) || seconds < 0) {
+    return "";
+  }
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+  return `${formattedMinutes}:${formattedSeconds}`;
+}
 
 function musicPlay(track) {
-  track = track.replaceAll("&amp;", "%26")
+  track = decodeURI(track).replaceAll("&amp;", "&");
   currentSong.src = "src/songs/" + track;
   currentSong.play();
-  playIco.src = "src/img/pause.svg"
+  let songInfo = document.querySelector(".songInfo");
+  songInfo.innerHTML = `<div class="musicIconContainer flex justify-center align-center">
+                          <img src="src/img/music-note-04-stroke-rounded.svg" alt="Music Icon" class="musicIcon invert">
+                        </div> 
+                        ${track}`;
+  playIco.src = "src/img/pause.svg";
 }
 
 async function main() {
@@ -61,23 +79,27 @@ async function main() {
     console.log(e);
     e.addEventListener("click", () => {
       let song = e.querySelector(".songName").innerHTML.trim();
-      console.log("Playing " + song)
+      console.log("Playing " + song);
       musicPlay(song);
     });
   });
 
-
   // Attach an event listener to play, previos and next buttons
-  playBtn.addEventListener("click", ()=> {
+  playBtn.addEventListener("click", () => {
     if (currentSong.paused) {
-      currentSong.play()
-      playIco.src = "src/img/pause.svg"
+      currentSong.play();
+      playIco.src = "src/img/pause.svg";
     } else {
-      currentSong.pause()
-      playIco.src="src/img/play.svg"
+      currentSong.pause();
+      playIco.src = "src/img/play.svg";
     }
-  })
+  });
 
+  // Listen for song time update
+  currentSong.addEventListener("timeupdate", () => {
+    let songTime = document.querySelector(".songTime");
+    songTime.innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`;
+  });
 }
 
 main();

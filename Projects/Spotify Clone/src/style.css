@@ -324,7 +324,7 @@ a {
     overflow: hidden;
 }
 
-.container .left .library .songsList ul li .musicIconContainer {
+.musicIconContainer {
     margin-right: 12px;
     width: 45px;
     height: 45px;
@@ -443,15 +443,30 @@ a {
 }
 
 .bottom {
-    background-color: #000;
     width: 100%;
     height: 90px;
+    background-color: #000;
+    justify-content: center;
 }
 
 .bottom .playbar {
     position: relative;
-    width: 45%;
+    width: 95%;
     height: 100%;
+    display: flex;
+}
+
+.bottom .playbar .songInfo {
+    padding: 0 3px;
+    position: absolute;
+    left: 0;
+    width: 280px;
+    max-width: 280px;
+    height: 50px;
+    max-height: 50px;
+    background-color: #1f1f1f;
+    font-size: 14px;
+    border-radius: 3px;
 }
 
 .bottom .playbar .controlBtns {
@@ -478,10 +493,10 @@ a {
     border-radius: 50%;
 }
 
-.bottom .seekbar {
+.bottom .playbar .seekbar {
     position: absolute;
     bottom: 15%;
-    width: 100%;
+    width: 50%;
     height: 3px;
     background-color: #b3b3b3;
     border-radius: 20px;
@@ -496,4 +511,14 @@ a {
     height: 12px;
     background-color: white;
     border-radius: 50%;
+}
+
+.bottom .playbar .songTime {
+    position: absolute;
+    right: 0;
+    width: 120px;
+    max-width: 120px;
+    height: 45px;
+    max-height: 45px;
+    color: #fff;
 }
