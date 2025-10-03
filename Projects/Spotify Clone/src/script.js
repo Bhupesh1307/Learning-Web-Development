@@ -10,8 +10,7 @@ async function fetchSongs() {
   for (let index = 0; index < links.length; index++) {
     let element = links[index];
     if (element.href.endsWith(".mp3")) {
-      let filename = element.href.split("src/songs/")[1];
-      songs.push("src/songs/" + filename);
+      songs.push(element.href.split("/songs/")[1]);
     }
   }
   return songs;
@@ -24,7 +23,7 @@ let playIco = playBtn.querySelector("img");
 
 function secondsToMinutesSeconds(seconds) {
   if (isNaN(seconds) || seconds < 0) {
-    return "";
+    return "00:00";
   }
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = Math.floor(seconds % 60);
@@ -35,21 +34,24 @@ function secondsToMinutesSeconds(seconds) {
   return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-function musicPlay(track) {
-  track = decodeURI(track).replaceAll("&amp;", "&");
-  currentSong.src = "src/songs/" + track;
-  currentSong.play();
+function musicPlay(track, pause = false) {
+  track = decodeURIComponent((track));
+  currentSong.src = "src/songs/" + encodeURIComponent(track);
+  if (!pause) {
+    currentSong.play();
+    playIco.src = "src/img/pause.svg";
+  }
   let songInfo = document.querySelector(".songInfo");
   songInfo.innerHTML = `<div class="musicIconContainer flex justify-center align-center">
                           <img src="src/img/music-note-04-stroke-rounded.svg" alt="Music Icon" class="musicIcon invert">
                         </div> 
                         ${track}`;
-  playIco.src = "src/img/pause.svg";
 }
 
 async function main() {
   // Get the list of all the songs
   let songs = await fetchSongs();
+  musicPlay(songs[0], true);
 
   // Show all the songs in the list
   let songsList = document
@@ -60,16 +62,16 @@ async function main() {
     songsList.innerHTML =
       songsList.innerHTML +
       `<li>
-                <div class="musicIconContainer flex justify-center align-center">
-                  <img src="src/img/music-note-04-stroke-rounded.svg" alt="Music Icon" class="musicIcon invert">
-                </div>
-                <div class="songName">
-                  ${displayName} 
-                </div>
-                <div class="play flex justify-center align-center">
-                  <img src="src/img/play.svg" alt="Play Song" class ="invert playBtn">
-                </div>
-              </li>`;
+        <div class="musicIconContainer flex justify-center align-center">
+          <img src="src/img/music-note-04-stroke-rounded.svg" alt="Music Icon" class="musicIcon invert">
+        </div>
+        <div class="songName">
+          ${displayName} 
+        </div>
+        <div class="play flex justify-center align-center">
+          <img src="src/img/play.svg" alt="Play Song" class ="invert playBtn">
+        </div>
+      </li>`;
   }
 
   // Attach an event listenener to each song
@@ -78,7 +80,7 @@ async function main() {
   ).forEach((e) => {
     console.log(e);
     e.addEventListener("click", () => {
-      let song = e.querySelector(".songName").innerHTML.trim();
+      let song = e.querySelector(".songName").innerText.trim();
       console.log("Playing " + song);
       musicPlay(song);
     });
