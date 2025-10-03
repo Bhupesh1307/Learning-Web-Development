@@ -51,7 +51,22 @@ function musicPlay(track, pause = false) {
 async function main() {
   // Get the list of all the songs
   let songs = await fetchSongs();
+
+  // Add first song in queue
   musicPlay(songs[0], true);
+
+  // Function to pause/play songs with Space key
+  document.addEventListener("keyup", (e)=> {
+    if (e.code === "Space") {
+      if (currentSong.paused) {
+      currentSong.play();
+      playIco.src = "src/img/pause.svg";
+      } else {
+        currentSong.pause();
+        playIco.src = "src/img/play.svg";
+      }
+    }
+  })
 
   // Show all the songs in the list
   let songsList = document
