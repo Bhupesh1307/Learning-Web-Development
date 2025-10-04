@@ -7,11 +7,13 @@
     --bg-lighter-gray: #212121;
     --bg-light-gray: #1f1f1f;
     --bg-dark-gray: #121212;
+    --bg-green: #3be477;
 
     /* Text Colors */
     --text-gray: #b3b3b3;
 }
 
+/* Default Styles */
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +25,7 @@
     width: 12px;
 }
 
+/* Basic UI */
 body {
     width: 100vw;
     height: 100vh;
@@ -47,6 +50,7 @@ a {
     width: 75vw;
 }
 
+/* Navbar Styles */
 .navbar {
     padding: 6px;
     height: 62px;
@@ -82,6 +86,7 @@ a {
     cursor: pointer;
 }
 
+/* Search Box UI */
 .nav-left .search {
     position: relative;
     width: 100%;
@@ -139,6 +144,7 @@ a {
     border-width: 3px;
 }
 
+/* Other Nav Buttons */
 .nav-right {
     justify-content: right;
     gap: 25px;
@@ -243,12 +249,14 @@ a {
     scale: 1.05;
 }
 
+/* Main App Container */
 .container {
     padding: 0 3px 0 3px ;
     width: 100vw;
     flex: 1;
 }
 
+/* Music Library Styles */
 .container .left {
     padding: 0 7px 0 5px;
     width: 24vw;
@@ -312,6 +320,7 @@ a {
     gap: 5px;
 }
 
+/* UI for Songs in Library */
 .container .left .library .songsList ul li {
     position: relative;
     padding: 8px;
@@ -348,13 +357,14 @@ a {
 
 .container .left .library .songsList ul li:hover {
     .play {
-        background-color: #3be477;
+        background-color: var(--bg-green);
     }
     .playBtn {
         filter: invert(0);
     }
 }
 
+/* Playlists Sections */
 .container .right {
     flex: 1;
     height: 85vh;
@@ -429,7 +439,7 @@ a {
     right: 18px;
     padding: 12px;
     width: 50px;
-    background-color: #3be477;
+    background-color: var(--bg-green);
     border-radius: 50%;
     visibility: hidden;
     cursor: pointer;
@@ -442,6 +452,7 @@ a {
     }
 }
 
+/* Bottom Section - Seekbar, Current Playing Song, Song Duration */
 .bottom {
     width: 100%;
     height: 90px;
@@ -456,6 +467,7 @@ a {
     display: flex;
 }
 
+/* Current Playing Song */
 .bottom .playbar .songInfo {
     padding: 0 3px;
     position: absolute;
@@ -469,6 +481,7 @@ a {
     border-radius: 3px;
 }
 
+/* Song Control Buttons */
 .bottom .playbar .controlBtns {
     position: absolute;
     top: 12%;
@@ -493,34 +506,52 @@ a {
     border-radius: 50%;
 }
 
-.bottom .playbar .seekbar {
+/* Seekbar */
+.bottom .playbar .seekbarContainer {
     position: absolute;
     bottom: 15%;
     width: 50%;
+    height: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bottom .playbar .seekbar {
+    width: 100%;
     height: 3px;
     background-color: #b3b3b3;
     border-radius: 20px;
 }
 
+.bottom .playbar .seekbarContainer:hover {
+    .seekbar, .progress {
+        height: 100%;
+    }
+    .circle {
+        scale: 1.10;
+    }
+}
+
 .bottom .playbar .seekbar .progress {
-    position: absolute;
     width: 0%;
-    height: 3px;
-    background-color: #3be477;
+    height: 100%;
+    background-color: var(--bg-green);
     border-radius: 20px;
+    transition: 0.05s ease-in;
 }
 
 .bottom .playbar .seekbar .circle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     left: 0;
     width: 12px;
     height: 12px;
     background-color: white;
     border-radius: 50%;
+    transition: 0.05s ease-in;
 }
 
+/* Song Duration */
 .bottom .playbar .songTime {
     position: absolute;
     right: 0;

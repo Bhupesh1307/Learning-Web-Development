@@ -93,7 +93,6 @@ async function main() {
   Array.from(
     document.querySelector(".songsList").getElementsByTagName("li")
   ).forEach((e) => {
-    console.log(e);
     e.addEventListener("click", () => {
       let song = e.querySelector(".songName").innerText.trim();
       console.log("Playing " + song);
@@ -123,6 +122,14 @@ async function main() {
       playIco.src = "src/img/play.svg";
     }
   });
+
+  // Function to Seek Song Duration
+  document.querySelector(".seekbar").addEventListener("click", (e)=> {
+    let percent = (e.offsetX / e.currentTarget.getBoundingClientRect().width) * 100;
+    document.querySelector(".circle").style.left = percent + "%";
+    document.querySelector(".progress").style.width = percent + "%";
+    currentSong.currentTime = (currentSong.duration * percent) / 100;
+  })
 }
 
 main();
