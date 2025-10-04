@@ -502,7 +502,15 @@ a {
     border-radius: 20px;
 }
 
-.bottom .seekbar .circle {
+.bottom .playbar .seekbar .progress {
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: #3be477;
+    border-radius: 20px;
+}
+
+.bottom .playbar .seekbar .circle {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

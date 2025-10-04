@@ -116,6 +116,12 @@ async function main() {
   currentSong.addEventListener("timeupdate", () => {
     let songTime = document.querySelector(".songTime");
     songTime.innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`;
+    let songProgress = (currentSong.currentTime / currentSong.duration) * 100 + "%";
+    document.querySelector(".circle").style.left = songProgress;
+    document.querySelector(".progress").style.width = songProgress;
+    if (songProgress == "100%") {
+      playIco.src = "src/img/play.svg";
+    }
   });
 }
 
