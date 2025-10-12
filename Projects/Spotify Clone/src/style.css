@@ -4,6 +4,7 @@
 
 :root {
     /* Background Colors */
+    --bg-gray: #4D4D4D;
     --bg-lighter-gray: #212121;
     --bg-light-gray: #1f1f1f;
     --bg-dark-gray: #121212;
@@ -260,7 +261,8 @@ a {
 .container .left {
     padding: 0 7px 0 5px;
     width: 24vw;
-    height: 85vh;
+    max-width: 385px;
+    height: 100%;
 }
 
 .container .left .library {
@@ -327,7 +329,7 @@ a {
     height: 60px;
     min-height: 60px;
     display: flex;
-    background-color: #1f1f1f;
+    background-color: var(--bg-light-gray);
     font-size: 14px;
     border-radius: 3px;
     overflow: hidden;
@@ -367,7 +369,7 @@ a {
 /* Playlists Sections */
 .container .right {
     flex: 1;
-    height: 85vh;
+    height: 100%;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -462,7 +464,7 @@ a {
 
 .bottom .playbar {
     position: relative;
-    width: 95%;
+    width: 98%;
     height: 100%;
     display: flex;
 }
@@ -474,17 +476,20 @@ a {
     left: 0;
     width: 280px;
     max-width: 280px;
-    height: 50px;
-    max-height: 50px;
-    background-color: #1f1f1f;
+    height: 85%;
     font-size: 14px;
     border-radius: 3px;
+    .musicIconContainer {
+        min-width: 60px;
+        min-height: 60px;
+        background-color: var(--bg-light-gray);
+    }
 }
 
 /* Song Control Buttons */
 .bottom .playbar .controlBtns {
     position: absolute;
-    top: 12%;
+    top: 18%;
     width: fit-content;
     gap: 25px;
 }
@@ -506,58 +511,64 @@ a {
     border-radius: 50%;
 }
 
+/* timeLineContainer - Seekbar, songCurrentTime, songDuration*/
+
+.bottom .playbar .timeLineContainer {
+    padding-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+}
+
 /* Seekbar */
-.bottom .playbar .seekbarContainer {
-    position: absolute;
-    bottom: 15%;
-    width: 50%;
-    height: 5px;
+.bottom .playbar .timeLineContainer .seekbarContainer {
+    width: 100%;
+    height: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 
-.bottom .playbar .seekbar {
+.bottom .playbar .timeLineContainer .seekbarContainer .seekbar {
     width: 100%;
     height: 3px;
-    background-color: #b3b3b3;
+    background-color: var(--bg-gray);
     border-radius: 20px;
 }
 
-.bottom .playbar .seekbarContainer:hover {
-    .seekbar, .progress {
-        height: 100%;
-    }
-    .circle {
-        scale: 1.10;
-    }
-}
-
-.bottom .playbar .seekbar .progress {
+.bottom .playbar .timeLineContainer .seekbarContainer .seekbar .progress {
     width: 0%;
     height: 100%;
-    background-color: var(--bg-green);
+    background-color: #fff;
     border-radius: 20px;
-    transition: 0.05s ease-in;
 }
 
-.bottom .playbar .seekbar .circle {
+.bottom .playbar .timeLineContainer .seekbarContainer .seekbar .circle {
+    display: none;
     left: 0;
     width: 12px;
     height: 12px;
     background-color: white;
     border-radius: 50%;
-    transition: 0.05s ease-in;
+}
+
+.bottom .playbar .timeLineContainer .seekbarContainer:hover {
+    .progress {
+        background-color: var(--bg-green);
+    }
+    .circle {
+        display: block;
+    }
 }
 
 /* Song Duration */
-.bottom .playbar .songTime {
-    position: absolute;
-    right: 0;
-    width: 120px;
+.bottom .playbar .timeLineContainer .songCurrentTime, .songDuration {
+    width: 70px;
     max-width: 120px;
-    height: 45px;
-    max-height: 45px;
-    color: #fff;
+    height: fit-content;
+    font-size: 12px;
+    color: var(--text-gray);
 }
