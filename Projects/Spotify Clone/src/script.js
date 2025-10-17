@@ -141,4 +141,19 @@ async function main() {
 
 }
 
+// Add Eventlistener to Hamburger Menu Button
+let hamMenuBtn = document.querySelector(".hamburgerBtn");
+hamMenuBtn.addEventListener("click", ()=> {
+  let hamMenu = document.querySelector(".hamMenu");
+  if (hamMenu.style.right == "-100%") {
+    hamMenu.style.right = "0";
+    hamMenu.style.opacity = "100%"
+    hamMenuBtn.querySelector("img").src = "src/img/x.svg";
+  } else {
+    hamMenu.style.right = "-100%";
+    hamMenu.style.opacity = "10%";
+    hamMenuBtn.querySelector("img").src = "src/img/menu-wider.svg";
+  }
+});
+
 main();

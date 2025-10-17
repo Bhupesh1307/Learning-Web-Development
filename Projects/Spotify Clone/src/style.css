@@ -250,6 +250,11 @@ a {
     scale: 1.05;
 }
 
+/* Hiding Mobile Navbar */
+.nav-mob {
+    display: none;
+}
+
 /* Main App Container */
 .container {
     padding: 0 3px 0 3px ;
@@ -454,6 +459,38 @@ a {
     }
 }
 
+.hamMenu {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: right 0.15s ease-in-out, opacity 0.25s ease;
+}
+
+.hamMenu ul {
+    padding: 15px 0 0 45px;
+    list-style: none;
+}
+
+.hamMenu .logInSec {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+.hamMenu .otherPages {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.hamMenu .seperator {
+    margin: 25px 0 0 45px;
+    width: 16px;
+    height: 3px;
+    background-color: #fff;
+}
+
 /* Bottom Section - Seekbar, Current Playing Song, Song Duration */
 .bottom {
     width: 100%;
@@ -571,4 +608,57 @@ a {
     height: fit-content;
     font-size: 12px;
     color: var(--text-gray);
+}
+
+/* Responsive Design for Mobile and Tabs */
+@media (max-width: 768px) {
+    .navbar .nav-left, .navbar .nav-right {
+        display: none;
+    }
+
+    /* Navbar Mobile Styles */
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar .nav-mob {
+        display: flex;
+        padding: 0 14px;
+        width: 100%;
+        height: 62px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .nav-mob .navMobBtnsContainer {
+        width: 135px;
+        justify-content: space-between;
+    }
+
+    .navbar .nav-mob .navMobBtnsContainer .openAppBtn {
+        width: 95px;
+        height: 32px;
+        background-color: #fff;
+        color: #000;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 22px;
+        cursor: pointer;
+    }
+
+    .container {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    /* Hiding Desktop SongList */
+    .container .left {
+        display: none;
+    }
+
+    .container .right, .container .right .playlists {
+        border-radius: 0;
+    }
+
+    /* Bottom me vo home search button sab add karna hai or uske upar seekbar vagaira */
 }
