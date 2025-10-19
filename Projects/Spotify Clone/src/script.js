@@ -151,10 +151,12 @@ hamMenuBtn.addEventListener("click", ()=> {
     hamMenu.style.right = "0";
     hamMenu.style.opacity = "1"
     hamMenuBtn.querySelector("img").src = "src/img/x.svg";
+    document.querySelector("body").style.overflow = "hidden";
   } else {
     hamMenu.style.right = "-100%";
     hamMenu.style.opacity = "0.1";
     hamMenuBtn.querySelector("img").src = "src/img/menu-wider.svg";
+    document.querySelector("body").style.overflow = "";
   }
 });
 
