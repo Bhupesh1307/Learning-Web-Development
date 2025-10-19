@@ -45,7 +45,9 @@ function musicPlay(track, pause = false) {
   songInfo.innerHTML = `<div class="musicIconContainer flex justify-center align-center">
                           <img src="src/img/music-note-04-stroke-rounded.svg" alt="Music Icon" class="musicIcon invert">
                         </div> 
-                        ${track}`;
+                        <div class= "currentSongName">
+                          ${track}
+                        </div>`;
 }
 
 function songTimeUpdate() {
@@ -147,11 +149,11 @@ hamMenuBtn.addEventListener("click", ()=> {
   let hamMenu = document.querySelector(".hamMenu");
   if (hamMenu.style.right == "-100%") {
     hamMenu.style.right = "0";
-    hamMenu.style.opacity = "100%"
+    hamMenu.style.opacity = "1"
     hamMenuBtn.querySelector("img").src = "src/img/x.svg";
   } else {
     hamMenu.style.right = "-100%";
-    hamMenu.style.opacity = "10%";
+    hamMenu.style.opacity = "0.1";
     hamMenuBtn.querySelector("img").src = "src/img/menu-wider.svg";
   }
 });

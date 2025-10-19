@@ -35,7 +35,6 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 a {
@@ -376,7 +375,7 @@ a {
     flex: 1;
     height: 100%;
     border-radius: 8px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .container .right .playlists {
@@ -385,7 +384,6 @@ a {
     height: 100%;
     background: linear-gradient(#212121, #121212);
     border-radius: 8px;
-    overflow-y: auto;
 }
 
 .container .right .playlists:has(:hover)::-webkit-scrollbar-thumb {
@@ -411,6 +409,7 @@ a {
     width: 100%;
     flex-wrap: wrap;
     gap: 20px;
+    overflow-y: auto;
 }
 
 .container .right .playlists .cardsContainer .card {
@@ -464,7 +463,7 @@ a {
     width: 100%;
     height: 100%;
     background-color: #000;
-    transition: right 0.15s ease-in-out, opacity 0.25s ease;
+    transition: right 0.3s ease-in-out, opacity 0.25s ease;
 }
 
 .hamMenu ul {
@@ -527,7 +526,7 @@ a {
 .bottom .playbar .controlBtns {
     position: absolute;
     top: 18%;
-    width: fit-content;
+    width: auto;
     gap: 25px;
 }
 
@@ -549,7 +548,6 @@ a {
 }
 
 /* timeLineContainer - Seekbar, songCurrentTime, songDuration*/
-
 .bottom .playbar .timeLineContainer {
     padding-top: 3%;
     display: flex;
@@ -660,5 +658,71 @@ a {
         border-radius: 0;
     }
 
-    /* Bottom me vo home search button sab add karna hai or uske upar seekbar vagaira */
+    .bottom {
+        position: fixed;
+        bottom: 0;
+        height: 60px;
+        background: none;
+    }
+
+    .bottom .playbar {
+        width: 98%;
+        background-color: #000;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .bottom .playbar .songInfo {
+        padding: 0 5px;
+        justify-content: flex-start;
+        width: 82%;
+
+    }
+
+    .bottom .playbar .songInfo .musicIconContainer {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        min-height: 45px;
+    }
+
+    .bottom .playbar .songInfo .currentSongName {
+        width: 95%;
+    }
+
+    .bottom .playbar .controlBtns {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    #prevBtn, #nextBtn {
+        display: none;
+    }
+
+    .bottom .playbar .controlBtns #songPlay {
+        width: 45px;
+        height: 45px;
+        background-color: transparent;
+        img {
+            filter: invert(1);
+        }
+    }
+
+    .bottom .playbar .timeLineContainer {
+        width: 100%;
+        position: relative;
+    }
+
+    .bottom .playbar .timeLineContainer .songCurrentTime, .timeLineContainer .songDuration {
+        display: none;
+    }
+
+    .bottom .playbar .seekbarContainer {
+        position: absolute;
+        top: 88%;
+        pointer-events: none;
+    }
 }
