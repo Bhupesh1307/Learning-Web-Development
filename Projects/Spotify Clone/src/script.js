@@ -116,7 +116,8 @@ async function main() {
   });
 
   // Attach an event listener to play, previos and next buttons
-  playBtn.addEventListener("click", () => {
+  playBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
     if (currentSong.paused) {
       currentSong.play();
       playIco.src = "src/img/pause.svg";
@@ -159,5 +160,19 @@ hamMenuBtn.addEventListener("click", ()=> {
     document.querySelector("body").style.overflow = "";
   }
 });
+
+// Add Eventlistener to Playbar to fullscreen currently playing song
+if (window.innerWidth <= 768) {
+  let playbar = document.querySelector(".playbar");
+  playbar.addEventListener("click", () => {
+    playbar.classList.add("mob");
+    document.querySelector("body").style.overflow = "hidden";
+  });
+
+  document.querySelector(".close").addEventListener("click", (e) => {
+    e.stopPropagation();
+    playbar.classList.remove("mob");
+  });
+}
 
 main();
