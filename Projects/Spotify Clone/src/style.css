@@ -42,18 +42,15 @@ a {
     text-decoration: none;
 }
 
-.left {
-    width: 25vw;
-}
-
-.right {
-    width: 75vw;
-}
-
 /* Navbar Styles */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     padding: 6px;
+    width: 100vw;
     height: 62px;
+    background-color: #000;
 }
 
 .nav-left {
