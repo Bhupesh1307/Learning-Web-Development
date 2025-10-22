@@ -167,12 +167,14 @@ if (window.innerWidth <= 768) {
   playbar.addEventListener("click", () => {
     playbar.classList.add("mob");
     document.querySelector("body").style.overflow = "hidden";
+    document.querySelector(".mob-nav").style.display = "none";
   });
 
   document.querySelector(".close").addEventListener("click", (e) => {
     e.stopPropagation();
     playbar.classList.remove("mob");
     document.querySelector("body").style.overflow = "";
+    document.querySelector(".mob-nav").style.display = "flex";
   });
 }
 
