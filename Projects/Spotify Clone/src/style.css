@@ -608,6 +608,10 @@ a {
     color: var(--text-gray);
 }
 
+.mob-nav {
+    display: none;
+}
+
 /* Responsive Design for Mobile and Tabs */
 @media (max-width: 768px) {
     .navbar .nav-left, .navbar .nav-right {
@@ -660,7 +664,7 @@ a {
 
     .bottom {
         position: fixed;
-        bottom: 0;
+        bottom: 60px;
         height: 60px;
         background: none;
     }
@@ -812,5 +816,28 @@ a {
             height: 8px;
             pointer-events: all;
         }
+    }
+
+    .mob-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        padding: 0 20px;
+        width: 100vw;
+        height: 60px;
+        background: linear-gradient(#0000005d, #0000007a, #00000099);
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mob-nav .navBtn-mob {
+        width: 25px;
+        height: 25px;
+        flex-direction: column;
+    }
+
+    .mob-nav .navBtn-mob p {
+        margin-top: 4px;
+        font-size: 12px;
     }
 }
