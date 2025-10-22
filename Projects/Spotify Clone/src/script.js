@@ -172,6 +172,7 @@ if (window.innerWidth <= 768) {
   document.querySelector(".close").addEventListener("click", (e) => {
     e.stopPropagation();
     playbar.classList.remove("mob");
+    document.querySelector("body").style.overflow = "";
   });
 }
 
