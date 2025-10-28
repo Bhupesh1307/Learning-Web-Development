@@ -160,6 +160,23 @@ async function main() {
 
   songTimeUpdate();
 
+  let volSlider = document.querySelector("#volCtrl");
+  volSlider.addEventListener("input", ()=> {
+    const val = volSlider.value;
+    const color = `linear-gradient(90deg, #fff ${val}%, var(--text-gray) ${val}%)`;
+    volSlider.style.background = color;
+    currentSong.volume = val/100;
+
+    // Chagint the volume icon
+    let volIcon = document.querySelector("#volIcon");
+    if (val == 0) {
+      volIcon.src = "src/img/volume-mute-02-stroke-rounded.svg";
+    } else if (val > 0 && val < 65) {
+      volIcon.src = "src/img/volume-low-stroke-rounded.svg";
+    } else if (val >= 65) {
+      volIcon.src = "src/img/volume-high-stroke-rounded.svg";
+    }
+  });
 }
 
 // Add Eventlistener to Hamburger Menu Button

@@ -609,6 +609,42 @@ a {
     color: var(--text-gray);
 }
 
+/* Music Volume Control */
+.bottom .playbar .volumeContainer {
+    position: absolute;
+    right: 0;
+    gap: 12px;
+}
+
+.bottom .playbar .volumeContainer .volRange input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.bottom .playbar .volumeContainer .volRange input[type="range"]::-webkit-slider-runnable-track {
+    /* background: linear-gradient(90deg, var(--text-gray) 60%, var(--text-gray) 60%); */
+    height: 3px;
+    border-radius: 8px;
+}
+
+.bottom .playbar .volumeContainer .volRange input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4.5px;
+    width: 12px;
+    height: 12px;
+    aspect-ratio: 1;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+
+
+/* Hiding the bottom navbar for desktop */
 .mob-nav {
     display: none;
 }
@@ -817,6 +853,10 @@ a {
             height: 8px;
             pointer-events: all;
         }
+    }
+
+    .bottom .playbar .volumeContainer {
+        display: none;
     }
 
     .mob-nav {

@@ -191,7 +191,7 @@
           </button>
         </div>
         <!-- SeekBar and Song Time -->
-         <div class="timeLineContainer">
+        <div class="timeLineContainer">
           <div class="songCurrentTime flex justify-center align-center"></div>
           <div class="seekbarContainer">
             <div class="seekbar flex align-center">
@@ -200,7 +200,15 @@
             </div>
           </div>
           <div class="songDuration flex justify-center align-center"></div>
-         </div>
+        </div>
+        <div class="volumeContainer flex justify-center align-center">
+          <div class="volIcon">
+            <img class="invert" id="volIcon" src="src/img/volume-high-stroke-rounded.svg" alt="volume icon">
+          </div>
+          <div class="volRange flex align-center">
+            <input type="range" min="0" max="100" value="100" name="Volume" id="volCtrl">
+          </div>
+        </div>
       </div>
     </div>
     <div class="mob-nav">
