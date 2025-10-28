@@ -334,6 +334,7 @@ a {
     font-size: 14px;
     border-radius: 3px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .musicIconContainer {

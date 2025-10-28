@@ -65,7 +65,7 @@ function songTimeUpdate() {
 
 async function main() {
   // Get the list of all the songs
-  let songs = await fetchSongs();
+  var songs = await fetchSongs();
 
   // Add first song in queue
   musicPlay(songs[0], true);
@@ -110,12 +110,12 @@ async function main() {
   ).forEach((e) => {
     e.addEventListener("click", () => {
       let song = e.querySelector(".songName").innerText.trim();
-      console.log("Playing " + song);
       musicPlay(song);
     });
   });
 
   // Attach an event listener to play, previos and next buttons
+  // Play/Pause button
   playBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     if (currentSong.paused) {
@@ -124,6 +124,24 @@ async function main() {
     } else {
       currentSong.pause();
       playIco.src = "src/img/play.svg";
+    }
+  });
+
+  // Next Button
+  let nextBtn = document.querySelector("#nextBtn");
+  nextBtn.addEventListener("click", () => {
+    let index = songs.indexOf(currentSong.src.split("/").splice(-1)[0]);
+    if ((index + 1) < songs.length) {
+      musicPlay(songs[index + 1]);
+    }
+  });
+
+  // Previous Button
+  let prevBtn = document.querySelector("#prevBtn");
+  prevBtn.addEventListener("click", () => {
+    let index = songs.indexOf(currentSong.src.split("/").splice(-1)[0]);
+    if ((index - 1) >= 0) {
+      musicPlay(songs[index - 1]);
     }
   });
 
