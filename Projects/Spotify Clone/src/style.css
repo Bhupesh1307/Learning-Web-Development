@@ -616,6 +616,10 @@ a {
     gap: 12px;
 }
 
+.bottom .playbar .volumeContainer .volIcon {
+    cursor: pointer;
+}
+
 .bottom .playbar .volumeContainer .volRange input[type="range"] {
     -webkit-appearance: none;
     appearance: none;

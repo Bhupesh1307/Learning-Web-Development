@@ -161,6 +161,7 @@ async function main() {
   songTimeUpdate();
 
   let volSlider = document.querySelector("#volCtrl");
+  let volIcon = document.querySelector("#volIcon");
   volSlider.addEventListener("input", ()=> {
     const val = volSlider.value;
     const color = `linear-gradient(90deg, #fff ${val}%, var(--text-gray) ${val}%)`;
@@ -168,13 +169,27 @@ async function main() {
     currentSong.volume = val/100;
 
     // Chagint the volume icon
-    let volIcon = document.querySelector("#volIcon");
     if (val == 0) {
       volIcon.src = "src/img/volume-mute-02-stroke-rounded.svg";
     } else if (val > 0 && val < 65) {
       volIcon.src = "src/img/volume-low-stroke-rounded.svg";
     } else if (val >= 65) {
       volIcon.src = "src/img/volume-high-stroke-rounded.svg";
+    }
+  });
+
+  // Attach Eventlistener to the music icon to mute/unmute
+  document.querySelector(".volIcon").addEventListener("click", () => {
+    if (volSlider.value != 0) {
+      volSlider.value = 0;
+      volSlider.style.background = "var(--text-gray)";
+      volIcon.src = "src/img/volume-mute-02-stroke-rounded.svg";
+      currentSong.volume = 0;
+    } else {
+      volSlider.value = 100;
+      volSlider.style.background = "#fff";
+      volIcon.src = "src/img/volume-high-stroke-rounded.svg";
+      currentSong.volume = 1;
     }
   });
 }
