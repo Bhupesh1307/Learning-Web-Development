@@ -1,14 +1,15 @@
-// Importing Modules
+// Import Modules
 const fs = require("fs")
 const path = require("path")
 
-// Reading Files
+// Read Files
 const files = fs.readdirSync(path.join(__dirname, "Files"))
 
-// Declaring the Base Folder (Files)
+// Declare the Base Folder (Files)
 const basePath = path.join(__dirname, "Files")
 
-// Checking if the ext folder exists for the files insede the Files folder, if they do moving the files from Files folder to their ext folder
+// Check if the ext folder exists for the files insede the Files folder,
+// if they do move the files from Files folder to their ext folder
 files.forEach((file) => {
     let ext = path.join((basePath), path.extname(file))
     let oldPath = path.join(basePath, file)
