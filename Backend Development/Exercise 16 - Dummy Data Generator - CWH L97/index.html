@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company</title>
+    <style>
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            outline: none;
+            border: 2px solid black;
+            border-radius: 12px;
+            background-color: lawngreen;
+            width: 150px;
+            height: 40px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button>Generate New Employee Data</button>
+    <script>
+        document.querySelector("button").addEventListener("click", async () => {
+            await fetch("/generate")
+            alert("New Employees Data Generated!")
+        })
+    </script>
+</body>
+</html>
