@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+.navLink {
+    @apply text-lg hover:underline cursor-pointer;
+}
