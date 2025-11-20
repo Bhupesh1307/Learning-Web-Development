@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+@layer base {
+    h1 {
+        font-size: var(--text-6xl);
+        font-family: var(--font-serif);
+        color: var(--color-sky-500);
+    }
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: --spacing(6);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .btn {
+    background-color: var(--color-cyan-400);
+    border-radius: var(--radius-lg);
+  }
+}
